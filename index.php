@@ -9,54 +9,101 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <style>
+  <script src="https://kit.fontawesome.com/f112d23fef.js" crossorigin="anonymous"></script>
+ <style>
     .container-fluid{
-        margin-top:20px;
         border:1px solid black;
     }
     .carousel-inner img {
-      width: 100%;
-  
+      width: 100%;  
   }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Teko', sans-serif;
+}
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;   
+}
+#navbar{
+    background: rgba(0,0,0,0.65);
+    padding: 0 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: 100px;
+}
+#navbar img{
+    width: 150px;
+    margin-left:50px; 
+}
+#navbar-ul{
+    margin-right: 100px;
+}
+#navbar-ul li{
+
+    padding: 0 10px;
+    transition: all 0.5s ease-in;
+}
+#navbar-ul li a{
+    color: #fff !important;
+    font-weight: 600;
+}
+#navbar-ul li a:hover{
+    opacity: 1;
+    transition: all 0.5s ease-in;
+   font-size:25px;
+}
+#toggle-btn{
+    background:aliceblue;
+    color:black;
+    margin-right:30px;
+    width:60px;
+    height:60px;
+}
 </style>
 </head>
 <body>
 <div class="container-fluid">
-<div class="row">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About US</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact US</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Location</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-   
-    </ul>
-     </div>
-</nav>
-
+    <div class="row">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
+            <span><i class="fas fa-bars"></i></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="navbar-ul" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#aboutus">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+                
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#location">Location</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./student/signin.php">Login</a>
+              </li>      
+          </ul>
+        </div>
+      </nav>
+    </div>
 </div>
-</div>
-<div class="container-fluid" style="height:600px;">
+<div class="container-fluid">
     <div class="row">
         <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -69,13 +116,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="./img/img5.jpg" alt="Los Angeles" width="1440" height="600">
+                <img src="./img/img5.jpg" alt="Los Angeles" width="1440" height="650">
                 </div>
                 <div class="carousel-item">
-                <img src="./img/img4.jpg" alt="Chicago" width="1100" height="600">
+                <img src="./img/img4.jpg" alt="Chicago" width="1100" height="650">
                 </div>
                 <div class="carousel-item">
-                <img src="./img/img6.jpg" alt="New York" width="1100" height="600">
+                <img src="./img/img6.jpg" alt="New York" width="1100" height="650">
                 </div>
             </div>
             
@@ -119,7 +166,6 @@
 <div class="container-fluid" style="height:200px;">
     <h1>footer</h1>
 </div>
-
 
 </body>
 </html>
