@@ -11,18 +11,22 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/f112d23fef.js" crossorigin="anonymous"></script>
  <style>
-    .container-fluid{
-        border:1px solid black;
-    }
-    .carousel-inner img {
-      width: 100%;  
-  }
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Teko', sans-serif;
 }
+body{
+    background: #3a6186; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+
+}
+.container-fluid{
+        border:1px solid black;
+    }
+/* navbar */
 #nav-bar{
     position: sticky;
     top: 0;
@@ -64,12 +68,95 @@
     width:60px;
     height:60px;
 }
+#toggle-btn:hover{
+}
+/*container-fluid-2*/
+#row-align{
+    padding:50px;
+}
+#container-fluid-2{
+    height:630px;    
+    padding-top: 10%;
+}
+.text {
+    color: #fff;
+    font-size: 70px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+    width: auto;
+}
+.enquiry-btn{
+    width: 240px;
+}
+.enquiry-btn a {
+    color: #fff;
+    background: #1d1d29;
+    display: block;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+     text-decoration:none;
+  transition:all .5s ease;
+   overflow:hidden;
+      position:relative;
+       z-index:2;
+}
+.eff-1{
+  width:100%;
+  height:100%;
+  top:0px;
+  left:-260px;
+  background:#fd5b25;
+  position:absolute;
+  transition:all 0.5s ease-in;
+  z-index:-1;
+}
+.enquiry-btn:hover .eff-1{
+    left:0;
+  }
+  #navbar-ul li:hover{
+      background-color: #fd5b25;
+      border-radius: 30%;
+    font-size: 20px;
+    }
+  .enquiry-btn:hover a{
+    color:#fff;
+  }
+  .middle {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+.hidden{
+    max-width: 0;
+    opacity: 0;
+    transition: 0.5s ease-in;
+}
+.text:hover .hidden{
+    opacity: 1;
+    max-width: 1em;
+    transition: all 0.5s ease-in;
+}
+.para1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+    color:white;
+}
+#col-1{
+    height: 532px;
+}
 </style>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark">
             <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
             <span><i class="fas fa-bars"></i></span>
@@ -103,9 +190,27 @@
       </nav>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" id="container-fluid-2"style="">
     <div class="row">
-        <div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" id="col-1">
+    <p id="ved" class="text middle"> 
+                    <span>V<span class="hidden">ED</span></span>
+                    
+                    <span>E<span class="hidden">DUCATIONAL</span></span>
+                   
+                    <span>A<span class="hidden">CADEMY</span></span>
+                        
+
+                </p>
+                <p class="para1">YOU HAVE A BRIGHT FUTURE
+                </p> 
+                <div class="enquiry-btn text-center">   
+                        <a href="#contact" class="btn-3" target="_blank" rel="nofollow" class="hvr-sweep-to-right"> Enquire Now <i class="fa fa-location-arrow"></i><div class="eff-1"></div></a>
+                    </div>   
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" id="row-align">
+    
+    <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -116,13 +221,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="./img/img5.jpg" alt="Los Angeles" width="1440" height="650">
+                <img src="./img/img5.jpg" alt="Los Angeles" width="1440" height="350">
                 </div>
                 <div class="carousel-item">
-                <img src="./img/img4.jpg" alt="Chicago" width="1100" height="650">
+                <img src="./img/img4.jpg" alt="Chicago" width="1440" height="350">
                 </div>
                 <div class="carousel-item">
-                <img src="./img/img6.jpg" alt="New York" width="1100" height="650">
+                <img src="./img/img2.jpg" alt="New York" width="1440" height="350">
                 </div>
             </div>
             
@@ -133,6 +238,7 @@
             <a class="carousel-control-next" href="#demo" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
+        </div>
         </div>
     </div>
 </div>
