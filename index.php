@@ -69,13 +69,11 @@
 }
 
 body{
-    background: #3a6186; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-
+    background-image: url(./images/background.jpg);
 }
 .container-fluid{
         border:1px solid black;
+        background:black;
     }
 /* navbar */
 #nav-bar{
@@ -84,7 +82,6 @@ body{
     z-index: 10;   
 }
 #navbar{
-    background: rgba(0,0,0,0.65);
     padding: 0 !important;
     position: fixed;
     width: 100%;
@@ -110,7 +107,7 @@ body{
 #navbar-ul li a:hover{
     opacity: 1;
     transition: all 0.5s ease-in;
-   font-size:25px;
+   font-size:15px;
 }
 #toggle-btn{
     background:aliceblue;
@@ -129,8 +126,9 @@ body{
     padding:50px;
 }
 #container-fluid-2{
-    height:630px;    
+    background-color:rgba(255,0,255,0.3);
     padding-top: 10%;
+    padding-bottom:124px;
 }
 .text {
     color: #fff;
@@ -142,6 +140,8 @@ body{
 }
 .enquiry-btn{
     width: 240px;
+    padding-bottom:20px;
+
 }
 .enquiry-btn a {
     color: #fff;
@@ -154,8 +154,8 @@ body{
      text-decoration:none;
   transition:all .5s ease;
    overflow:hidden;
-      position:relative;
-      top: 50px;
+   position: relative;
+    top: -9px;
        z-index:2;
 }
 .eff-1{
@@ -197,8 +197,11 @@ body{
     font-size: 20px;
     font-weight: 600;
     position:relative;
-    top:50px;
+    top:5px;
     color:white;
+    padding-bottom:20px;
+    padding-top:20px;
+
 }
 .para1:hover{
     text-decoration: underline;
@@ -206,14 +209,19 @@ body{
 .span-block{
     display:block;
 }
+@media (min-width: 768px)
+.col-md-12{
+    position:relative;
+    top:-18px;
+}
 </style>
 </head>
-<body onload="myFunction()" style="margin:0;">
+<body onload="myFunction()">
 <div id="loader"></div>
 <div id="myDiv" class="animate-bottom">
     <div class="container-fluid">
         <div class="row">
-            <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <nav id="navbar" class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
                     <span><i class="fas fa-bars"></i></span>
@@ -261,10 +269,10 @@ body{
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                        <img src="./images/img1.jpg" alt="Los Angeles" width="100%" height="350">
+                        <img src="./images/img12.jpg" alt="Los Angeles" width="100%" height="350">
                         </div>
                         <div class="carousel-item">
-                        <img src="./images/img2.jpg" alt="Chicago" width="100%" height="350">
+                        <img src="./images/img11.jpg" alt="Chicago" width="100%" height="350">
                         </div>
                         <div class="carousel-item">
                         <img src="./images/img3.jpg" alt="New York" width="100%" height="350">
@@ -295,20 +303,20 @@ body{
         </div>
     </div>
 
-    <div class="container-fluid" style="height:600px;">
+    <div class="container-fluid" style=" position:relative;top:100px; height:600px;">
         <h1>class portfolio</h1>
     </div>
 
-    <div class="container-fluid" style="height:600px;">
+    <div class="container-fluid" style=" margin-top:100px; height:600px;">
         <h1>our services</h1>
     </div>
 
 
-    <div class="container-fluid" style="height:600px;">
+    <div class="container-fluid" style="margin-top:100px; height:600px;">
         <h1>Recent Achievement</h1>
     </div>
 
-    <div class="container-fluid" style="height:600px;">
+    <div class="container-fluid" style="margin-top:100px; height:600px;">
         <h1>Student feedback</h1>
     </div>
 
