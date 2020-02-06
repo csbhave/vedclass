@@ -96,9 +96,8 @@ body{
     margin-right: 100px;
 }
 #navbar-ul li{
-
-    padding: 0 10px;
-    transition: all 0.5s ease-in;
+    margin-right:50px;
+    transition: all 0.5s ease-out;
 }
 #navbar-ul li a{
     color: #fff !important;
@@ -107,7 +106,6 @@ body{
 #navbar-ul li a:hover{
     opacity: 1;
     transition: all 0.5s ease-in;
-   font-size:15px;
 }
 #toggle-btn{
     background:aliceblue;
@@ -117,9 +115,11 @@ body{
     height:60px;
 }
 #navbar-ul li:hover{
-      background-color: #fd5b25;
+    border: 2px solid #fd5b25;
+      background:black;
       border-radius: 30%;
-    font-size: 20px;
+    font-size:20px;
+   
     }
 /*container-fluid-2*/
 #row-align{
