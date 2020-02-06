@@ -17,6 +17,57 @@
     box-sizing: border-box;
     font-family: 'Teko', sans-serif;
 }
+/*spinner*/
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+}
+
 body{
     background: #3a6186; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
@@ -68,8 +119,11 @@ body{
     width:60px;
     height:60px;
 }
-#toggle-btn:hover{
-}
+#navbar-ul li:hover{
+      background-color: #fd5b25;
+      border-radius: 30%;
+    font-size: 20px;
+    }
 /*container-fluid-2*/
 #row-align{
     padding:50px;
@@ -80,7 +134,7 @@ body{
 }
 .text {
     color: #fff;
-    font-size: 70px;
+    font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 900;
     cursor: pointer;
@@ -101,6 +155,7 @@ body{
   transition:all .5s ease;
    overflow:hidden;
       position:relative;
+      top: 50px;
        z-index:2;
 }
 .eff-1{
@@ -116,21 +171,17 @@ body{
 .enquiry-btn:hover .eff-1{
     left:0;
   }
-  #navbar-ul li:hover{
-      background-color: #fd5b25;
-      border-radius: 30%;
-    font-size: 20px;
-    }
+
   .enquiry-btn:hover a{
     color:#fff;
   }
   .middle {
     position: relative;
-    top: 30%;
+    top: 35%;
     transform: translateY(-50%);
     width: 100%;
     display: block;
-    justify-content: center;
+    justify-content: left;
 }
 .hidden{
     max-width: 0;
@@ -145,133 +196,147 @@ body{
 .para1{
     font-size: 20px;
     font-weight: 600;
-    margin-top: 50px;
+    position:relative;
+    top:50px;
     color:white;
 }
-#col-1{
-    height: 532px;
+.para1:hover{
+    text-decoration: underline;
+}
+.span-block{
+    display:block;
 }
 </style>
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
-            <span><i class="fas fa-bars"></i></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul id="navbar-ul" class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#aboutus">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact Us</a>
-              </li>
-                
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#location">Location</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./student/signin.php">Login</a>
-              </li>      
-          </ul>
+<body onload="myFunction()" style="margin:0;">
+<div id="loader"></div>
+<div id="myDiv" class="animate-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <a class="navbar-brand" href="#"><img src="./images/logo.jpg" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
+                    <span><i class="fas fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="navbar-ul" class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutus">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact Us</a>
+                        </li>
+                            
+                        <li class="nav-item">
+                        <a class="nav-link" href="#footer">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#location">Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./vVx$8xpC5v6kgKW/student">Login</a>
+                        </li>      
+                    </ul>
+                </div>
+            </nav>
         </div>
-      </nav>
     </div>
-</div>
-<div class="container-fluid" id="container-fluid-2"style="">
-    <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" id="col-1">
-    <p id="ved" class="text middle"> 
-                    <span>V<span class="hidden">ED</span></span>
-                    
-                    <span>E<span class="hidden">DUCATIONAL</span></span>
-                   
-                    <span>A<span class="hidden">CADEMY</span></span>
-                        
-
+    <div class="container-fluid" id="container-fluid-2"style="">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" id="row-align">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+  
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="./images/img1.jpg" alt="Los Angeles" width="100%" height="350">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="./images/img2.jpg" alt="Chicago" width="100%" height="350">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="./images/img3.jpg" alt="New York" width="100%" height="350">
+                        </div>
+                    </div>
+            
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                <p class="text middle"> 
+                    <span class="span-block">V<span class="hidden">ED</span></span>                    
+                    <span class="span-block">E<span class="hidden">DUCATIONAL</span></span>
+                    <span class="span-block">A<span class="hidden">CADEMY</span></span>
                 </p>
                 <p class="para1">YOU HAVE A BRIGHT FUTURE
                 </p> 
-                <div class="enquiry-btn text-center">   
+                    <div class="enquiry-btn text-center">   
                         <a href="#contact" class="btn-3" target="_blank" rel="nofollow" class="hvr-sweep-to-right"> Enquire Now <i class="fa fa-location-arrow"></i><div class="eff-1"></div></a>
                     </div>   
-    </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7" id="row-align">
-    
-    <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-  
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="./img/img5.jpg" alt="Los Angeles" width="1440" height="350">
-                </div>
-                <div class="carousel-item">
-                <img src="./img/img4.jpg" alt="Chicago" width="1440" height="350">
-                </div>
-                <div class="carousel-item">
-                <img src="./img/img2.jpg" alt="New York" width="1440" height="350">
-                </div>
             </div>
-            
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div>
         </div>
     </div>
+
+    <div class="container-fluid" style="height:600px;">
+        <h1>class portfolio</h1>
+    </div>
+
+    <div class="container-fluid" style="height:600px;">
+        <h1>our services</h1>
+    </div>
+
+
+    <div class="container-fluid" style="height:600px;">
+        <h1>Recent Achievement</h1>
+    </div>
+
+    <div class="container-fluid" style="height:600px;">
+        <h1>Student feedback</h1>
+    </div>
+
+    <div class="container-fluid" style="height:600px;">
+        <h1>Location</h1>
+    </div>
+
+    <div class="container-fluid" style="height:465px;">
+        <h1>contact us</h1>
+    </div>
+
+
+    <div class="container-fluid" style="height:200px;">
+        <h1>footer</h1>
+    </div>
 </div>
+<script>
+var myVar;
 
-<div class="container-fluid" style="height:600px;">
-    <h1>class portfolio</h1>
-</div>
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
 
-<div class="container-fluid" style="height:600px;">
-    <h1>our services</h1>
-</div>
-
-
-<div class="container-fluid" style="height:600px;">
-    <h1>Recent Achievement</h1>
-</div>
-
-<div class="container-fluid" style="height:600px;">
-    <h1>Student feedback</h1>
-</div>
-
-<div class="container-fluid" style="height:600px;">
-    <h1>Location</h1>
-</div>
-
-<div class="container-fluid" style="height:465px;">
-    <h1>contact us</h1>
-</div>
-
-
-<div class="container-fluid" style="height:200px;">
-    <h1>footer</h1>
-</div>
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 
 </body>
 </html>
